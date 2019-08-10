@@ -13,8 +13,9 @@ app = create_app('production')
 
 # Create manager instance 
 manager = Manager(app)
-
 manager.add_command('server',Server)
+
+migrate=Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
 @manager.command
@@ -28,7 +29,7 @@ def test():
 
 @manager.shell
 def make_shell_context():
-    return dict( app=app, db=db, User=User, Review=Review, Role=Role)
+    return dict( app=app, db=db, User=User, Blog=Blog,Comment=Comment)
 
 if __name__ == '__main__':
     #     app.secret_key = 'qwerty12345' 

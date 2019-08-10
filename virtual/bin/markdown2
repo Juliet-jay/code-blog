@@ -1,4 +1,4 @@
-#!/home/kathure/Documents/Blog/virtual/bin/python3
+#!/home/kathure/Documents/pitches/virtual/bin/python3
 
 import sys
 from os.path import join, dirname, exists
