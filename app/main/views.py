@@ -31,7 +31,7 @@ def account(uname):
     user = User.query.filter_by(username = uname).first()
 
     if user is None:
-        abort(fourOwffour)
+        abort('fourOwfour')
     blogs = Blog.query.order_by(Blog.posted.desc()).all()
     
     return render_template('account.html', user = user, blogs=blogs)
@@ -51,7 +51,7 @@ def update(uname):
     user = User.query.filter_by(username = uname).first()
 
     if user is None:
-        abort(fourOwfour)
+        abort('fourOwfour')
     blogs = Blog.query.order_by(Blog.posted.desc()).all()
     
     return render_template('update.html', user = user, blogs=blogs)

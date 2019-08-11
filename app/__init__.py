@@ -23,15 +23,24 @@ def create_app(config_name):
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
     
-    db.init_app(app)
+    # Initialising flask extensions
     bootstrap.init_app(app)
+    db.init_app(app)
     login_manager.init_app(app)
     
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    # Regestering the main blueprint
     
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint,url_prefix='/authenticate')
+    app.register_blueprint(auth_blueprint, url_prefix='/authenticate')
+
     
+    # from .main import main as main_blueprint
+    # app.register_blueprint(main_blueprint)
     
+    # from .auth import auth as auth_blueprint
+    # app.register_blueprint(auth_blueprint,url_prefix='/authenticate')
+    
+    # configure UploadSet
+    configure_uploads(app,photos)
+
     return app
