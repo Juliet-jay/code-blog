@@ -3,6 +3,8 @@ class Config:
     '''
     General configuration parent class
     '''
+    
+    
     SECRET_KEY = os.environ.get('SECRET_KEY')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -18,7 +20,7 @@ class Config:
 
 class ProdConfig(Config):
     '''
-    Pruduction configuration child class
+    Production configuration child class
 
     Args:
         Config: The parent configuration class with General configuration settings
