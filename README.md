@@ -29,9 +29,9 @@ https://dollarblog.herokuapp.com/
 ## BDD
 | Behavior           | Input                 | Outcome                            |
 | -------------------|-----------------------| -----------------------------------|
-| request page       | click horuku link url | view other blogs          |
-| click on a pitch   |                       | vote/comment                       |
-| sign in/up         | details pass & user   | view,blog & comment               |
+| request page       | click horuku link url | view other blogs                   |
+| click on a blog    |                       | vote/comment                       |
+| sign in/up         | details pass & user   | view,blog & comment                |
 
 ## Setup and installations
 
